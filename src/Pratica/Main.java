@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("----------ES1----------");
         int[] array= new int[5];
         Random nRand= new Random();
         for (int i = 0; i < array.length ; i++) {
@@ -17,37 +18,52 @@ public class Main {
         System.out.println(Arrays.toString(array));
 
         Scanner sc = new Scanner(System.in);
-        System.out.print("Inserisci un numero da 1 a 10: ");
-        int userNumber = sc.nextInt();
-        try{
-            try{
-        if (userNumber<1 | userNumber>10){
-            System.out.println("Hai inserito un numero che non è compreso tra 1 e 10");
-            userNumber = sc.nextInt();
-        }}
+try {
 
-            catch (NumberOutOfTen e){
-                System.out.println("Il numero è superiore a 10");
-            }
+          System.out.print("Inserisci un numero da 1 a 10: ");
+          int userNumber = sc.nextInt();
+          if (userNumber<1 || userNumber>10){
+              System.out.println("Il numero non è superiore a 10");
+
+          }
+          System.out.println("Inserisci l'indice dell'array (1-4)  ");
+          int indice = sc.nextInt();
+           array[indice]=userNumber;
 
 
-        System.out.println("Inserisci l'indice dell'array (1-4)  ");
-        int indice = sc.nextInt();
-        if (indice<0 | indice>4) {
-            System.out.println("Hai inserito un numero che non è compreso tra 1 e 10");
-            indice= sc.nextInt();
-        }
-        array[indice]=userNumber;
+} catch (ArrayIndexOutOfBoundsException e) {
+    System.out.println("il numero inserito sfora il limite dell'array");
+    sc.close();
+}
         System.out.println(Arrays.toString(array));
-        sc.close();
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Errore: hai superato i limiti dell'array");
-        }
+          sc.close();
 
 
-        System.out.println("------------ES2--------------");
+ System.out.println("----------ES2----------");
+
+
+}
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+
+
+
 
         /*
+        System.out.println("------------ES2--------------");
+
         Scanner sc2= new Scanner(System.in);
         System.out.print("Quanti km hai percorso? ");
         int km= sc2.nextInt();
@@ -67,8 +83,8 @@ public class Main {
         sc2.close();
 
          */
-        }
-        }
+
+
 
 
 
